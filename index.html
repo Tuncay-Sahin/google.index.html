@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+
+<body>
+    <div class="container">
+        <header>
+            <img src="google_logo.png" alt="Google Logo" class="logo" onclick="refreshPage()">
+        </header>
+        <main>
+            <form id="search-form" onsubmit="searchGoogle(event)">
+                <input type="text" id="search-input" placeholder="Google'da ara">
+                <button type="submit" id="search-button"><span class="search-icon">🔍</span></button>
+                <button type="button" id="image-search-button" onclick="searchImages()">Google Görsellerde Ara</button>
+            </form>
+            <button id="feeling-lucky" onclick="feelingLucky()">Kendimi Şanslı Hissediyorum</button>
+
+        </main>
+    </div>
+
+    <script>
+        function searchGoogle() {
+          const searchInput = document.getElementById('search-input').value;
+          const searchQuery = encodeURIComponent(searchInput);
+          const searchUrl = `https://www.google.com/search?q=${searchQuery}`;
+          window.location.href = searchUrl;
+        }
+    
+        function feelingLucky() {
+          window.location.href = 'https://www.google.com/search?q=I%27m+kendimi+%C5%9Fansl%C4%B1+hissediyorum&btnI=';
+        }
+      </script>
+    <script src="script.js"></script>
+    
+</body>
+
+</html>
